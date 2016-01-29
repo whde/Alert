@@ -5,4 +5,7 @@
 - 2.点击command+B, 会打包出Alert.FrameWork;
 - 3.将Alert.FrameWork copy到项目文件夹;
 - 4.
+<p align="center" >
+  <img src="httpshttps://github.com/whde/Alert/blob/master/Alert/CA246576-E925-4195-B0D6-072E7FC1F3D6.png">
+</p>
 
