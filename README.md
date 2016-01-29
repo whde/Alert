@@ -14,20 +14,19 @@
 ```
 - 6.使用:
 - ```objective-c
-
-          Alert *alert = [[Alert alloc] initWithTitle:CLocalizedString(@"输入口令") message:nil
-                                           delegate:nil
-                                  cancelButtonTitle:CLocalizedString(@"取消")
-                                  otherButtonTitles:CLocalizedString(@"进入"), nil];
-        alert.alertStyle = AlertStylePlainTextInput;
-        __block Alert*alertV = alert;
-        [alert setClickBlock:^(Alert *alertView, NSInteger buttonIndex) {
-            if (buttonIndex == 1) {
-                NSLog(@"%@", alertV.textField.text);
-            }
-        }];
-        [alert setCancelBlock:^(Alert *alertView) {
-            // 取消
-        }];
-        [alert show];
+  Alert *alert = [[Alert alloc] initWithTitle:CLocalizedString(@"输入口令") message:nil
+                                     delegate:nil
+                            cancelButtonTitle:CLocalizedString(@"取消")
+                            otherButtonTitles:CLocalizedString(@"进入"), nil];
+  alert.alertStyle = AlertStylePlainTextInput;
+ __block Alert*alertV = alert;
+ [alert setClickBlock:^(Alert *alertView, NSInteger buttonIndex) {
+    if (buttonIndex == 1) {
+             NSLog(@"%@", alertV.textField.text);
+     }
+ }];
+ [alert setCancelBlock:^(Alert *alertView) {
+     // 取消
+ }];
+ [alert show];
 ```
