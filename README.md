@@ -10,7 +10,7 @@
 </p>
 - 5.导入头文件 
 ```objective-c
-   #import <Alert/Alert.h>
+  #import <Alert/Alert.h>
 ```
 
 - 6.使用:
