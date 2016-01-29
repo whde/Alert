@@ -6,11 +6,15 @@
 - 3.将Alert.FrameWork copy到项目文件夹;
 - 4.
 <p align="center" >
-  <img src="https://github.com/whde/Alert/blob/master/Alert/CA246576-E925-4195-B0D6-072E7FC1F3D6.png">
+  <img src="https://raw.githubusercontent.com/whde/Alert/master/Alert/CA246576-E925-4195-B0D6-072E7FC1F3D6.jpeg">
 </p>
 - 5.导入头文件 
+```objective-c
    #import <Alert/Alert.h>
+```
 - 6.使用:
+- ```objective-c
+
           Alert *alert = [[Alert alloc] initWithTitle:CLocalizedString(@"输入口令") message:nil
                                            delegate:nil
                                   cancelButtonTitle:CLocalizedString(@"取消")
@@ -26,4 +30,4 @@
             // 取消
         }];
         [alert show];
-
+```
