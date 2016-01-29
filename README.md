@@ -9,7 +9,7 @@
   <img src="https://raw.githubusercontent.com/whde/Alert/master/Alert/CA246576-E925-4195-B0D6-072E7FC1F3D6.jpeg">
 </p>
 - 5.导入头文件 
-```objective-c
+ ```objective-c
   #import <Alert/Alert.h>
 ```
 
