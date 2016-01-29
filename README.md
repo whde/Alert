@@ -12,7 +12,9 @@
 ```objective-c
    #import <Alert/Alert.h>
 ```
+
 - 6.使用:
+
  ```objective-c
   Alert *alert = [[Alert alloc] initWithTitle:CLocalizedString(@"输入口令") message:nil
                                      delegate:nil
