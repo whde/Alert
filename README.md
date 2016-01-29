@@ -6,6 +6,24 @@
 - 3.将Alert.FrameWork copy到项目文件夹;
 - 4.
 <p align="center" >
-  <img src="httpshttps://github.com/whde/Alert/blob/master/Alert/CA246576-E925-4195-B0D6-072E7FC1F3D6.png">
+  <img src="https://github.com/whde/Alert/blob/master/Alert/CA246576-E925-4195-B0D6-072E7FC1F3D6.png">
 </p>
+- 5.导入头文件 
+   #import <Alert/Alert.h>
+- 6.使用:
+          Alert *alert = [[Alert alloc] initWithTitle:CLocalizedString(@"输入口令") message:nil
+                                           delegate:nil
+                                  cancelButtonTitle:CLocalizedString(@"取消")
+                                  otherButtonTitles:CLocalizedString(@"进入"), nil];
+        alert.alertStyle = AlertStylePlainTextInput;
+        __block Alert*alertV = alert;
+        [alert setClickBlock:^(Alert *alertView, NSInteger buttonIndex) {
+            if (buttonIndex == 1) {
+                NSLog(@"%@", alertV.textField.text);
+            }
+        }];
+        [alert setCancelBlock:^(Alert *alertView) {
+            // 取消
+        }];
+        [alert show];
 
