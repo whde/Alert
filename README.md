@@ -1,4 +1,5 @@
 # Alert
+消息提醒视图
 　　在Xcode7 ，iOS9.0的SDK中，已经明确提示不再推荐使用UIAlertView，而只能使用UIAlertController; 而系统的样式不能够满足大多UI的需求,因此自定义一个类似UIAlertView;
 ## 使用:
 - 1.下载代码,用xcode打开工程
