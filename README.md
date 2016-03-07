@@ -1,7 +1,7 @@
 # Alert
-<p align="center" >
-<video src="https://raw.githubusercontent.com/whde/Alert/master/Alert/未命名.mov" controls="controls"></video>
-</p>
+ <p align="center" >
+   <img src="https://raw.githubusercontent.com/whde/Alert/master/Alert/B902C6B8-0C75-43F7-BE1C-B7485F440541.png">
+ </p>
 消息提醒视图,在Xcode7 ，iOS9.0的SDK中，已经明确提示不再推荐使用UIAlertView，而只能使用UIAlertController; 而系统的样式不能够满足大多UI的需求,因此自定义一个类似UIAlertView;
 ## 使用:
 - 1.下载代码,用xcode打开工程
