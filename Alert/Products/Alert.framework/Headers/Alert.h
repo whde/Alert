@@ -5,7 +5,7 @@
 //  Created by Whde on 14/12/22.
 //  Copyright (c) 2014年 whde. All rights reserved.
 //
-
+// GitHub:https://github.com/whde/Alert
 #import <UIKit/UIKit.h>
 #define DEFAULT_LINE_SPACING        (int)0
 #define DEFAULT_PARAGRAPH_SPACING   (int)3
