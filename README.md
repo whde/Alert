@@ -39,10 +39,12 @@ pod 'Alert', '~> 1.0.3'
  }];
  [alert show];
 ```
+
 <p align="center">
  <img src="https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111507.png" height="100%" width="50%" />
  <img src="https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111540.png" height="100%" width="50%" />
  </p>
+ 
  <p align="center">
  <img src="https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111552.png" height="100%" width="50%" />
  <img src="https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111558.png" height="100%" width="50%" />
