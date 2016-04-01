@@ -6,11 +6,11 @@
 	<dict>
 		<key>Headers/Alert.h</key>
 		<data>
-		Z1QXa+ks25rMVuXFazA7qw7iMN4=
+		rymnLd31y+Fd7dxd36oMYsHG5X0=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		9xX4q/cTRlXavZhjnYby/BX5bTw=
+		jAhxaYZp9VI/h5HmzGhtv13WmwY=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -20,13 +20,27 @@
 	<key>files2</key>
 	<dict>
 		<key>Headers/Alert.h</key>
-		<data>
-		Z1QXa+ks25rMVuXFazA7qw7iMN4=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			rymnLd31y+Fd7dxd36oMYsHG5X0=
+			</data>
+			<key>hash2</key>
+			<data>
+			qiE4Grh4FdiSjSs/VCRrF9Ltq4fhlHdhtqHYztl92RE=
+			</data>
+		</dict>
 		<key>Modules/module.modulemap</key>
-		<data>
-		ngy3fbz4nTipaW1P5sdeXTJWq6o=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			ngy3fbz4nTipaW1P5sdeXTJWq6o=
+			</data>
+			<key>hash2</key>
+			<data>
+			xMyo4n8RzSF6jmco5/mTmvZc8D/6bfZAnptR1Vh9yo0=
+			</data>
+		</dict>
 	</dict>
 	<key>rules</key>
 	<dict>

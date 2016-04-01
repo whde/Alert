@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name          = "Alert"
-s.version       = "1.0.2"
+s.version       = "1.0.3"
 s.summary       = "iOS AlertView."
 s.homepage      = "https://github.com/whde/Alert"
 s.license       = 'MIT'

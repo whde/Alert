@@ -20,8 +20,8 @@ typedef NS_ENUM(NSInteger, AlertStyle) {
 @protocol AlertDelegate;
 
 @interface Alert : UIView {
-    UITextView *messageLabel;
-    UILabel *titleLabel;
+    UITextView *_messageLabel;
+    UILabel *_titleLabel;
 }
 @property (nonatomic, retain) id object;
 // delegate
