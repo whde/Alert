@@ -9,8 +9,8 @@
 ```objective-c
 pod 'Alert', '~> 1.0.3'
 ```
-- 2.点击command+B, 会打包出Alert.FrameWork;
-- 3.将Alert.FrameWork copy到项目文件夹;
+- 2.点击<code>command+B</code>, 会打包出<code>Alert.FrameWork</code>;
+- 3.将<code>Alert.FrameWork</code> copy到项目文件夹;
 - 4.
 <p align="center" >
 <img src="https://raw.githubusercontent.com/whde/Alert/master/Alert/CA246576-E925-4195-B0D6-072E7FC1F3D6.jpeg" height="100%" width="500" border="2"/>
