@@ -10,7 +10,6 @@
 ```objective-c
 pod 'Alert', '~> 1.0.3'
 ```
-
 - 2.点击<code>command+B</code>, 会打包出<code>Alert.FrameWork</code>;
 - 3.将<code>Alert.FrameWork</code> copy到项目文件夹;
 - 4.
