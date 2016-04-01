@@ -43,8 +43,8 @@
  *  @return Alert
  */
 - (instancetype)initWithTitle:(NSString *)title message:(NSString *)message delegate:(id /*<AlertDelegate>*/)delegate cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitles:(NSString *)otherButtonTitles, ... NS_REQUIRES_NIL_TERMINATION;{
-    self = [super initWithFrame:[UIScreen mainScreen].bounds];
-    if (self){
+    self = [super init];
+    if (self) {
         titleText = title;
         messageText = message;
         _lineSpacing = DEFAULT_LINE_SPACING;
@@ -79,6 +79,7 @@
             va_end(params);
         }
     }
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(needsDisplay) name:UIApplicationDidChangeStatusBarOrientationNotification object:nil];
     return self;
 }
 
@@ -177,7 +178,7 @@
  */
 - (void)setFont:(UIFont *)font{
     _font = font;
-    messageLabel.font = font;
+    _messageLabel.font = font;
 }
 
 /**
@@ -245,14 +246,16 @@
  *  刷新
  */
 - (void)needsDisplay{
+    self.frame = [UIScreen mainScreen].bounds;
     // 设置背影半透明
-    self.backgroundColor = [UIColor colorWithWhite:0 alpha:0.];
-    
-    // 1.alertView
-    if (_alertView == NULL) {
-        _alertView = [[UIToolbar alloc] init];
-        [self addSubview:_alertView];
+    self.backgroundColor = [UIColor colorWithWhite:0 alpha:0.3];
+    if (_alertView) {
+        [_alertView removeFromSuperview];
+        _alertView = nil;
     }
+    // 1.alertView
+    _alertView = [[UIToolbar alloc] init];
+    [self addSubview:_alertView];
     float width = 280;
     if (messageText && messageText.length > 100) {
         width = self.frame.size.width-40;
@@ -262,75 +265,71 @@
     _alertView.layer.masksToBounds = YES;
     
     // 2.title
-    if (titleLabel == NULL) {
-        titleLabel = [[UILabel alloc] init];
-        [_alertView addSubview:titleLabel];
-    }
-    titleLabel.numberOfLines = 3;
-    titleLabel.textAlignment = NSTextAlignmentCenter;
-    titleLabel.lineBreakMode = NSLineBreakByTruncatingTail;
-    titleLabel.numberOfLines = 3;
-    titleLabel.text = [NSString stringWithFormat:@"      %@", titleText];
-    titleLabel.font = [UIFont systemFontOfSize:17];
-    titleLabel.textColor = [UIColor colorWithRed:(255.0/255) green:(127.0/255) blue:(70.0/255) alpha:1];
-    CGRect rect = [titleLabel textRectForBounds:CGRectMake(0, 20, _alertView.frame.size.width-40, 100) limitedToNumberOfLines:3];
+    _titleLabel = [[UILabel alloc] init];
+    [_alertView addSubview:_titleLabel];
+    _titleLabel.numberOfLines = 3;
+    _titleLabel.textAlignment = NSTextAlignmentCenter;
+    _titleLabel.lineBreakMode = NSLineBreakByTruncatingTail;
+    _titleLabel.numberOfLines = 3;
+    _titleLabel.text = [NSString stringWithFormat:@"      %@", titleText];
+    _titleLabel.font = [UIFont systemFontOfSize:17];
+    _titleLabel.textColor = [UIColor colorWithRed:(255.0/255) green:(127.0/255) blue:(70.0/255) alpha:1];
+    CGRect rect = [_titleLabel textRectForBounds:CGRectMake(0, 20, _alertView.frame.size.width-40, 100) limitedToNumberOfLines:3];
     rect.origin.x = 20;
-    titleLabel.frame = rect;
-    titleLabel.center = CGPointMake(CGRectGetWidth(_alertView.frame)/2, CGRectGetHeight(titleLabel.frame)/2+15);
+    _titleLabel.frame = rect;
+    _titleLabel.center = CGPointMake(CGRectGetWidth(_alertView.frame)/2, CGRectGetHeight(_titleLabel.frame)/2+15);
     
     // 3.imageView
     NSInteger imageTag = 821827;
     UIImageView *imageView = (UIImageView *)[self viewWithTag:imageTag];
     if (imageView == NULL) {
-        imageView = [[UIImageView alloc] initWithFrame:CGRectMake(CGRectGetMinX(titleLabel.frame), 15, 20, 20)];
+        imageView = [[UIImageView alloc] initWithFrame:CGRectMake(CGRectGetMinX(_titleLabel.frame), 15, 20, 20)];
         imageView.image = [self getiImage];
         [_alertView addSubview:imageView];
     }
-    CGFloat height = CGRectGetMaxY(titleLabel.frame);
+    CGFloat height = CGRectGetMaxY(_titleLabel.frame);
     
     if (messageText) {
         // 4.messageLabel
-        if (messageLabel == NULL) {
-            messageLabel = [[UITextView alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(titleLabel.frame)+10, _alertView.frame.size.width-20, 35)];
-            messageLabel.backgroundColor = [UIColor clearColor];
-            messageLabel.editable = NO;
-            messageLabel.scrollEnabled = NO;
-            messageLabel.selectable = NO;
-            [messageLabel flashScrollIndicators];   // 闪动滚动条
-            [_alertView addSubview:messageLabel];
-        }
-        CGRect frame = messageLabel.frame;
+        _messageLabel = [[UITextView alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(_titleLabel.frame)+10, _alertView.frame.size.width-20, 35)];
+        _messageLabel.backgroundColor = [UIColor clearColor];
+        _messageLabel.editable = NO;
+        _messageLabel.scrollEnabled = NO;
+        _messageLabel.selectable = NO;
+        [_messageLabel flashScrollIndicators];   // 闪动滚动条
+        [_alertView addSubview:_messageLabel];
+        CGRect frame = _messageLabel.frame;
         NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
         style.lineSpacing = _lineSpacing;
         style.paragraphSpacing = _paragraphSpacing;
         style.alignment = _contentAlignment;
         NSDictionary *dic = @{NSFontAttributeName:_font,NSParagraphStyleAttributeName:style};
-        CGFloat broadWith = (messageLabel.contentInset.left
-                             + messageLabel.contentInset.right
-                             + messageLabel.textContainerInset.left
-                             + messageLabel.textContainerInset.right
-                             + messageLabel.textContainer.lineFragmentPadding/*左边距*/
-                             + messageLabel.textContainer.lineFragmentPadding/*右边距*/);
-        CGFloat textHeight = (self.frame.size.height-64-49-100-44-20);
+        CGFloat broadWith = (_messageLabel.contentInset.left
+                             + _messageLabel.contentInset.right
+                             + _messageLabel.textContainerInset.left
+                             + _messageLabel.textContainerInset.right
+                             + _messageLabel.textContainer.lineFragmentPadding/*左边距*/
+                             + _messageLabel.textContainer.lineFragmentPadding/*右边距*/);
+        CGFloat textHeight = self.frame.size.height>self.frame.size.width?(self.frame.size.height-64-49-100-(argsArray.count <= 2?44:argsArray.count*44)-20):(self.frame.size.height-100-(argsArray.count <= 2?44:argsArray.count*44));
         CGSize size = [messageText boundingRectWithSize:CGSizeMake(_alertView.frame.size.width-20-broadWith, LINE_MAX) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:dic context:nil].size;
-        CGFloat broadHeight  = (messageLabel.contentInset.top
-                                + messageLabel.contentInset.bottom
-                                + messageLabel.textContainerInset.top
-                                + messageLabel.textContainerInset.bottom);
+        CGFloat broadHeight  = (_messageLabel.contentInset.top
+                                + _messageLabel.contentInset.bottom
+                                + _messageLabel.textContainerInset.top
+                                + _messageLabel.textContainerInset.bottom);
         CGSize adjustedSize = CGSizeMake(frame.size.width, size.height+broadHeight);
         frame.size.width = _alertView.frame.size.width-20;
         frame.size.height = adjustedSize.height;
         if (frame.size.height >= textHeight){
             frame.size.height = textHeight;
-            messageLabel.scrollEnabled = YES;   // 允许滚动
+            _messageLabel.scrollEnabled = YES;   // 允许滚动
         }else{
-            messageLabel.scrollEnabled = NO;    // 不允许滚动
+            _messageLabel.scrollEnabled = NO;    // 不允许滚动
         }
-        messageLabel.frame = frame;
-        messageLabel.contentSize = CGSizeMake(_alertView.frame.size.width-20, size.height);
-        [messageLabel setAttributedText:[[NSAttributedString alloc] initWithString:messageText attributes:dic]];
+        _messageLabel.frame = frame;
+        _messageLabel.contentSize = CGSizeMake(_alertView.frame.size.width-20, size.height);
+        [_messageLabel setAttributedText:[[NSAttributedString alloc] initWithString:messageText attributes:dic]];
         
-        height = CGRectGetMaxY(messageLabel.frame);
+        height = CGRectGetMaxY(_messageLabel.frame);
     }
     
     switch (_alertStyle) {
