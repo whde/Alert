@@ -39,9 +39,9 @@ pod 'Alert', '~> 1.0.2'
  }];
  [alert show];
 ```
-<img src="https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111507.png" height="100%" width="200" />
-<img src="https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111540.png" height="100%" width="200" />
-<img src="https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111552.png" height="100%" width="200" />
+<img src="https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111507.png" height="100%" width="200" align="top"/>
+<img src="https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111540.png" height="100%" width="200" align="top"/>
+<img src="https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111552.png" height="100%" width="200" align="top"/>
 <img src="https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111558.png" height="100%" width="200" />
 <img src="https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111606.png" height="100%" width="200" />
 <img src="https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111611.png" height="100%" width="200" />
