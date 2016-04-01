@@ -7,7 +7,7 @@
 ## 使用:
 - 1.下载代码,用xcode打开工程, 或
 ```objective-c
-pod 'Alert', '~> 1.0.2'
+pod 'Alert', '~> 1.0.3'
 ```
 - 2.点击command+B, 会打包出Alert.FrameWork;
 - 3.将Alert.FrameWork copy到项目文件夹;
