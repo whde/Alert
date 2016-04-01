@@ -22,29 +22,24 @@
       <h1>
 <a id="alert" class="anchor" href="#alert" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Alert</h1>
 
-<p></p><p align="center">
- <img src="https://raw.githubusercontent.com/whde/Alert/master/Alert/Untitled.gif" height="100%" width="200" border="1">
- <img src="https://raw.githubusercontent.com/whde/Version/master/Version/Simulator%20Screen%20Shot%202016%E5%B9%B43%E6%9C%8815%E6%97%A5%20%E4%B8%8A%E5%8D%8811.09.25.png" height="100%" width="200" border="1">
+<p align="center">
+ <img src="https://raw.githubusercontent.com/whde/Alert/master/Alert/Untitled.gif" height="100%" width="50%" border="1" align="center">
+ <img src="https://raw.githubusercontent.com/whde/Version/master/Version/Simulator%20Screen%20Shot%202016%E5%B9%B43%E6%9C%8815%E6%97%A5%20%E4%B8%8A%E5%8D%8811.09.25.png" height="100%" width="50%" border="1" align="center">
  </p>
 消息提醒视图,在Xcode7 ，iOS9.0的SDK中，已经明确提示不再推荐使用UIAlertView，而只能使用UIAlertController; 而系统的样式不能够满足大多UI的需求,因此自定义一个类似UIAlertView;
-
-<h2>
-<a id="使用" class="anchor" href="#%E4%BD%BF%E7%94%A8" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>使用:</h2>
-
-<ul>
-<li>1.下载代码,用xcode打开工程, 或</li>
-</ul>
-
-<div class="highlight highlight-source-objc"><pre>pod <span class="pl-s"><span class="pl-pds">'</span>Alert<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>~&gt; 1.0.3<span class="pl-pds">'</span></span></pre></div>
-
-<ul>
-<li>2.点击command+B, 会打包出Alert.FrameWork;</li>
-<li>3.将Alert.FrameWork copy到项目文件夹;</li>
-<li>4.
+## 使用:
+- 1.下载代码,用xcode打开工程, 或
+```objective-c
+pod 'Alert', '~&gt; 1.0.3'
+```
+- 2.点击command+B, 会打包出Alert.FrameWork;
+- 3.将Alert.FrameWork copy到项目文件夹;
+- 4.
 <p align="center">
-<img src="https://raw.githubusercontent.com/whde/Alert/master/Alert/CA246576-E925-4195-B0D6-072E7FC1F3D6.jpeg" height="100%" width="500" border="1">
+<img src="https://raw.githubusercontent.com/whde/Alert/master/Alert/CA246576-E925-4195-B0D6-072E7FC1F3D6.jpeg" height="100%" width="500" border="2">
 </p>
-</li>
+
+<ul>
 <li>
 <p>5.导入头文件 </p>
 
@@ -68,23 +63,39 @@ __block Alert*alertV = alert;
    <span class="pl-c">// 取消</span>
 }];
 [alert <span class="pl-c1">show</span>];</pre></div>
-
-<p><img src="https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111507.png" height="100%" width="200" border="1">
-<img src="https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111540.png" height="100%" width="200" border="1">
-<img src="https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111552.png" height="100%" width="200" border="1">
-<img src="https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111558.png" height="100%" width="200" border="1">
-<img src="https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111606.png" height="100%" width="200" border="1">
-<img src="https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111611.png" height="100%" width="200" border="1">
-<img src="https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111619.png" height="100%" width="200" border="1">
-<img src="https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111624.png" height="100%" width="200" border="1">
-<img src="https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111645.png" height="100%" width="200" border="1">
-<img src="https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111651.png" height="100%" width="200" border="1">
-<img src="https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111707.png" height="100%" width="200" border="1">
-<img src="https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111712.png" height="100%" width="200" border="1">
-<img src="https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111719.png" height="100%" width="200" border="1">
-<img src="https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111726.png" height="100%" width="200" border="1"></p>
 </li>
 </ul>
+
+<p align="center">
+ <img src="https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111507.png" height="100%" width="50%">
+ <img src="https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111540.png" height="100%" width="50%">
+ </p>
+ 
+ <p align="center">
+ <img src="https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111552.png" height="100%" width="50%">
+ <img src="https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111558.png" height="100%" width="50%">
+ </p>
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111606.png" height="100%" width="50%">
+ <img src="https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111611.png" height="100%" width="50%">
+</p>
+
+<p align="center"><img src="https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111619.png" height="100%" width="50%">
+ <img src="https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111624.png" height="100%" width="50%">
+</p>
+
+<p align="center"><img src="https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111645.png" height="100%" width="50%">
+ <img src="https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111651.png" height="100%" width="50%">
+</p>
+
+<p align="center"><img src="https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111707.png" height="100%" width="50%">
+ <img src="https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111712.png" height="100%" width="50%">
+</p>
+
+<p align="center"><img src="https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111719.png" height="100%" width="50%">
+ <img src="https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111726.png" height="100%" width="50%">
+</p>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/whde/Alert">Alert</a> is maintained by <a href="https://github.com/whde">whde</a>.</span>
