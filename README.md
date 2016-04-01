@@ -1,8 +1,4 @@
 # Alert
-<p align="center">
- <img src="https://raw.githubusercontent.com/whde/Alert/master/Alert/Untitled.gif" height="100%" width="50%" border="1" align="center"/>
- <img src="https://raw.githubusercontent.com/whde/Version/master/Version/Simulator%20Screen%20Shot%202016年3月15日%20上午11.09.25.png" height="100%" width="50%" border="1" align="center"/>
- </p>
 
 # 使用:
 - 1.下载代码,用xcode打开工程, 或
