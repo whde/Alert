@@ -3,7 +3,7 @@
  <img src="https://raw.githubusercontent.com/whde/Alert/master/Alert/Untitled.gif" height="100%" width="50%" border="1" align="center"/>
  <img src="https://raw.githubusercontent.com/whde/Version/master/Version/Simulator%20Screen%20Shot%202016年3月15日%20上午11.09.25.png" height="100%" width="50%" border="1" align="center"/>
  </p>
- <p>消息提醒视图,在Xcode7 ，iOS9.0的SDK中，已经明确提示不再推荐使用UIAlertView，而只能使用UIAlertController; 而系统的样式不能够满足大多UI的需求,因此自定义一个类似UIAlertView;</p>
+ 消息提醒视图,在Xcode7 ，iOS9.0的SDK中，已经明确提示不再推荐使用UIAlertView，而只能使用UIAlertController; 而系统的样式不能够满足大多UI的需求,因此自定义一个类似UIAlertView;
  
  
 # 使用:
@@ -11,8 +11,8 @@
 ```objective-c
 pod 'Alert', '~> 1.0.3'
 ```
-- 2.点击<code>command+B</code>, 会打包出<code>Alert.FrameWork</code>;
-- 3.将<code>Alert.FrameWork</code> copy到项目文件夹;
+- 2.点击command+B, 会打包出Alert.FrameWork;
+- 3.将Alert.FrameWork copy到项目文件夹;
 - 4.
 <p align="center" >
 <img src="https://raw.githubusercontent.com/whde/Alert/master/Alert/CA246576-E925-4195-B0D6-072E7FC1F3D6.jpeg" height="100%" width="500" border="2"/>
