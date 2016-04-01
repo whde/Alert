@@ -39,31 +39,17 @@ pod 'Alert', '~> 1.0.2'
  }];
  [alert show];
 ```
-</p> ![](https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111507.png)
- </p>
- </p> ![](https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111540.png)
- </p>
- </p> ![](https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111552.png)
- </p>
-  </p> ![](https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111558.png)
- </p>
-   </p> ![](https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111606.png)
- </p>
-    </p> ![](https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111611.png)
- </p>
-     </p> ![](https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111619.png)
- </p>
-      </p> ![](https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111624.png)
- </p>
-       </p> ![](https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111645.png)
- </p>
-        </p> ![](https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111651.png)
- </p>
-         </p> ![](https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111707.png)
- </p>
-          </p> ![](https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111712.png)
- </p>
-           </p> ![](https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111719.png)
- </p>
-           </p> ![](https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111726.png)
- </p>
+<p align="center" height="100%" width="200"> ![](https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111507.png)</p>
+<p align="center" > ![](https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111540.png)</p>
+<p align="center" > ![](https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111552.png)</p>
+<p align="center" > ![](https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111558.png)</p>
+<p align="center" > ![](https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111606.png)</p>
+<p align="center" > ![](https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111611.png)</p>
+<p align="center" > ![](https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111619.png)</p>
+<p align="center" > ![](https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111624.png)</p>
+<p align="center" > ![](https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111645.png)</p>
+<p align="center" > ![](https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111651.png)</p>
+<p align="center" > ![](https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111707.png)</p>
+<p align="center" > ![](https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111712.png)</p>
+<p align="center" > ![](https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111719.png)</p>
+<p align="center" > ![](https://raw.githubusercontent.com/whde/Alert/master/AlertDemo/ScreenShot_20160401_111726.png)</p>
