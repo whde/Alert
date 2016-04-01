@@ -4,10 +4,10 @@
  <img src="https://raw.githubusercontent.com/whde/Version/master/Version/Simulator%20Screen%20Shot%202016年3月15日%20上午11.09.25.png" height="100%" width="50%" border="1" align="center"/>
  </p>
  <p>消息提醒视图,在Xcode7 ，iOS9.0的SDK中，已经明确提示不再推荐使用UIAlertView，而只能使用UIAlertController; 而系统的样式不能够满足大多UI的需求,因此自定义一个类似UIAlertView;</p>
-
-## 使用:
+ 
+ 
+# 使用:
 - 1.下载代码,用xcode打开工程, 或
-
 ```objective-c
 pod 'Alert', '~> 1.0.3'
 ```
