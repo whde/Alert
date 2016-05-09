@@ -7,19 +7,12 @@
 </p>
 
 # 使用:
-- 1.下载代码,用xcode打开工程, 或
 ```objective-c
 pod 'Alert', '~> 1.0.3'
 ```
-- 2.点击command+B, 会打包出Alert.FrameWork;
-- 3.将Alert.FrameWork copy到项目文件夹;
-- 4.
-<p align="center" >
-<img src="https://raw.githubusercontent.com/whde/Alert/master/Alert/CA246576-E925-4195-B0D6-072E7FC1F3D6.jpeg" height="100%" width="500" border="2"/>
-</p>
 - 5.导入头文件 
 ```objective-c
-#import <Alert/Alert.h>
+#import "Alert.h"
 ```
 
 - 6.使用:
