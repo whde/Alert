@@ -8,7 +8,7 @@
 
 # 使用:
 ```objective-c
-pod 'Alert', '~> 1.0.3'
+pod 'Alert', '~> 1.0.4'
 ```
 - 5.导入头文件 
 ```objective-c
