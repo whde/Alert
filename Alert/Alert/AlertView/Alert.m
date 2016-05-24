@@ -31,6 +31,13 @@
         return image_s;
     }
 }
+
+/**
+ *  处理通知
+ */
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 /**
  *  创建alertView
  *
@@ -241,12 +248,26 @@
             break;
     }
 }
-
+CGRect getScreenBounds() {
+    CGRect screenBounds = [UIScreen mainScreen].bounds;
+    if ((NSFoundationVersionNumber <= NSFoundationVersionNumber_iOS_7_1) &&
+        UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation)) {
+        return CGRectMake(0, 0, screenBounds.size.height, screenBounds.size.width);
+    }
+    return screenBounds;
+}
 /**
  *  刷新
  */
 - (void)needsDisplay{
+    if (NSFoundationVersionNumber <= NSFoundationVersionNumber_iOS_7_1) {
+        [UIView animateWithDuration:0.3 animations:^{
+            self.transform = [[[UIApplication sharedApplication].windows[0] subviews] objectAtIndex:0].transform;
+        }];
+    }
     self.frame = [UIScreen mainScreen].bounds;
+    
+    CGRect screenBounds = getScreenBounds();
     // 设置背影半透明
     self.backgroundColor = [UIColor colorWithWhite:0 alpha:0.3];
     if (_alertView) {
@@ -258,7 +279,7 @@
     [self addSubview:_alertView];
     float width = 280;
     if (messageText && messageText.length > 100) {
-        width = self.frame.size.width-40;
+        width = screenBounds.size.width-40;
     }
     _alertView.frame = CGRectMake(0, 0, width, 200);
     _alertView.layer.cornerRadius = 6;
@@ -310,7 +331,7 @@
                              + _messageLabel.textContainerInset.right
                              + _messageLabel.textContainer.lineFragmentPadding/*左边距*/
                              + _messageLabel.textContainer.lineFragmentPadding/*右边距*/);
-        CGFloat textHeight = self.frame.size.height>self.frame.size.width?(self.frame.size.height-64-49-100-(argsArray.count <= 2?44:argsArray.count*44)-20):(self.frame.size.height-100-(argsArray.count <= 2?44:argsArray.count*44));
+        CGFloat textHeight = screenBounds.size.height>screenBounds.size.width?(screenBounds.size.height-64-49-100-(argsArray.count <= 2?44:argsArray.count*44)-20):(screenBounds.size.height-100-(argsArray.count <= 2?44:argsArray.count*44));
         CGSize size = [messageText boundingRectWithSize:CGSizeMake(_alertView.frame.size.width-20-broadWith, LINE_MAX) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:dic context:nil].size;
         CGFloat broadHeight  = (_messageLabel.contentInset.top
                                 + _messageLabel.contentInset.bottom
@@ -439,7 +460,7 @@
     CGRect rect2 =  _alertView.frame;
     rect2.size.height = height;
     _alertView.frame = rect2;
-    _alertView.center = self.center;
+    _alertView.center = CGPointMake(screenBounds.size.width/2, screenBounds.size.height/2);
 }
 
 #pragma mark - search
@@ -450,10 +471,11 @@
  */
 - (void)keyBoardWillShow:(NSNotification *)note{
     
+    CGRect screenBounds = getScreenBounds();
     CGRect rect = [note.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
     [UIView animateWithDuration:[note.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue] animations:^{
         CGRect viewRect = _alertView.frame;
-        viewRect.origin.y = CGRectGetHeight(self.frame)-rect.size.height-viewRect.size.height;
+        viewRect.origin.y = CGRectGetHeight(screenBounds)-rect.size.height-viewRect.size.height;
         _alertView.frame = viewRect;
     }completion:^(BOOL finished) {
     }];
