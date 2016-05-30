@@ -134,7 +134,8 @@
 - (void)show {
     dispatch_async(dispatch_get_main_queue(), ^{
         [self needsDisplay];
-        UIWindow *window = ((UIWindow *)[[UIApplication sharedApplication] windows][0]);
+        /*UIWindow *window = ((UIWindow *)[[UIApplication sharedApplication] windows][0]);*/
+        UIWindow *window = ((UIWindow *)[UIApplication sharedApplication].keyWindow);
         [window addSubview:self];
         [window endEditing:YES];
         [self performPresentationAnimation];
@@ -262,7 +263,7 @@ CGRect getScreenBounds() {
 - (void)needsDisplay{
     if (NSFoundationVersionNumber <= NSFoundationVersionNumber_iOS_7_1) {
         [UIView animateWithDuration:0.3 animations:^{
-            self.transform = [[[UIApplication sharedApplication].windows[0] subviews] objectAtIndex:0].transform;
+            self.transform = [[[UIApplication sharedApplication].keyWindow subviews] objectAtIndex:0].transform;
         }];
     }
     self.frame = [UIScreen mainScreen].bounds;
