@@ -28,7 +28,7 @@ typedef NS_ENUM(NSInteger, AlertStyle) {
 @property (nonatomic, assign, readonly) id<AlertDelegate>delegate;
 
 // alertView
-@property (nonatomic, strong, readonly) UIToolbar *alertView;
+@property (nonatomic, strong, readonly) UIView *alertView;
 
 // 内容文字大小
 @property (nonatomic, strong) UIFont *font;

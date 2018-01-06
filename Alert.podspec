@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name          = "Alert"
-s.version       = "1.0.4"
+s.version       = "1.0.5"
 s.summary       = "iOS AlertView."
 s.homepage      = "https://github.com/whde/Alert"
 s.license       = 'MIT'
@@ -11,6 +11,6 @@ s.source_files  = 'Alert/Alert/AlertView/*{h,m}'
 s.frameworks    = 'Foundation', 'CoreGraphics', 'UIKit'
 s.requires_arc  = true
 s.description   = <<-DESC
-It is a Alert view used on iOS, which implement by Objective-C.
+It is a Alert view used on iOS, which implement by Objective-C, Support iOS 11.
 DESC
 end

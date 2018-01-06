@@ -276,7 +276,8 @@ CGRect getScreenBounds() {
         _alertView = nil;
     }
     // 1.alertView
-    _alertView = [[UIToolbar alloc] init];
+    _alertView = [[UIView alloc] init];
+    _alertView.backgroundColor = [UIColor whiteColor];
     [self addSubview:_alertView];
     float width = 280;
     if (messageText && messageText.length > 100) {
