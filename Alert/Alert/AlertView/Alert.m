@@ -92,8 +92,6 @@
 
 /**
  *  点击按钮
- *
- *  @param sender
  */
 - (void)buttonClick:(UIButton *)sender{
     if (_delegate && [_delegate respondsToSelector:@selector(alertView:clickedButtonAtIndex:)]){
@@ -107,8 +105,6 @@
 
 /**
  *  点击取消按钮
- *
- *  @param sender
  */
 - (void)cancalClick:(UIButton *)sender{
     if (_delegate && [_delegate respondsToSelector:@selector(alertViewCancel:)]) {
@@ -151,9 +147,6 @@
 
 /**
  *  点击空白处,不做操作
- *
- *  @param touches
- *  @param event
  */
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     [self.window resignFirstResponder];
@@ -201,7 +194,7 @@
 /**
  *  设置行距
  *
- *  @param lineSpacing
+ *  @param lineSpacing CGFloat
  */
 - (void)setLineSpacing:(CGFloat)lineSpacing{
     _lineSpacing = lineSpacing;
@@ -210,7 +203,7 @@
 /**
  *  这是段落间距
  *
- *  @param paragraphSpacing
+ *  @param paragraphSpacing CGFloat
  */
 - (void)setParagraphSpacing:(CGFloat)paragraphSpacing{
     _paragraphSpacing = paragraphSpacing;
@@ -219,7 +212,6 @@
 /*!
  *  设置Alert的类型
  *  @param alertStyle AlertStyle
- *  @since 3.0.4
  */
 - (void)setAlertStyle:(AlertStyle)alertStyle {
     _alertStyle = alertStyle;
@@ -485,8 +477,6 @@ CGRect getScreenBounds() {
 
 /**
  *  隐藏键盘
- *
- *  @param note
  */
 - (void)keyBoardWillHide:(NSNotification *)note{
     [UIView animateWithDuration:[note.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue] animations:^{

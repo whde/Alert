@@ -64,7 +64,7 @@ typedef void (^ClicksAlertBlock)(Alert *alertView, NSInteger buttonIndex);
  *  @param cancelButtonTitle 取消按钮名称
  *  @param otherButtonTitles 其他按钮
  *
- *  @return Alert
+ *  @return Alert Alert *
  */
 - (instancetype)initWithTitle:(NSString *)title message:(NSString *)message delegate:(id /*<AlertDelegate>*/)delegate cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitles:(NSString *)otherButtonTitles, ...NS_REQUIRES_NIL_TERMINATION;
 
@@ -81,7 +81,7 @@ typedef void (^ClicksAlertBlock)(Alert *alertView, NSInteger buttonIndex);
 /**
  *  点击按钮协议
  *
- *  @param alertView
+ *  @param alertView Alert *
  *  @param buttonIndex 0,1,2...
  */
 - (void)alertView:(Alert *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex;
@@ -89,7 +89,7 @@ typedef void (^ClicksAlertBlock)(Alert *alertView, NSInteger buttonIndex);
 /**
  *  取消协议
  *
- *  @param alertView
+ *  @param alertView Alert *
  */
 - (void)alertViewCancel:(Alert *)alertView;
 
