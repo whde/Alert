@@ -223,7 +223,7 @@
  */
 - (void)setAlertStyle:(AlertStyle)alertStyle {
     _alertStyle = alertStyle;
-    void (^addKeybordNotification)()= ^(){
+    void (^addKeybordNotification)(void)= ^(){
         // 键盘通知
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoardWillShow:) name:UIKeyboardWillShowNotification object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoardWillHide:) name:UIKeyboardWillHideNotification object:nil];
