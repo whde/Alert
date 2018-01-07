@@ -66,7 +66,7 @@ typedef void (^ClicksAlertBlock)(Alert *alertView, NSInteger buttonIndex);
  *
  *  @return Alert Alert *
  */
-- (instancetype)initWithTitle:(NSString *)title message:(NSString *)message delegate:(id /*<AlertDelegate>*/)delegate cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitles:(NSString *)otherButtonTitles, ...NS_REQUIRES_NIL_TERMINATION;
+- (instancetype)initWithTitle:(NSString *)title message:(NSString *)message delegate:(id<AlertDelegate>)delegate cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitles:(NSString *)otherButtonTitles, ...NS_REQUIRES_NIL_TERMINATION;
 
 /**
  *  显示alertView
