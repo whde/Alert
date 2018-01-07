@@ -55,6 +55,7 @@ typedef void (^ClicksAlertBlock)(Alert *alertView, NSInteger buttonIndex);
 - (void)setClickBlock:(ClicksAlertBlock)clickBlock;
 
 #pragma mark - --init
+
 /**
  *  创建alertView
  *
