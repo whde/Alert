@@ -468,9 +468,9 @@ CGRect getScreenBounds() {
     CGRect screenBounds = getScreenBounds();
     CGRect rect = [note.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
     [UIView animateWithDuration:[note.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue] animations:^{
-        CGRect viewRect = _alertView.frame;
+        CGRect viewRect = self.alertView.frame;
         viewRect.origin.y = CGRectGetHeight(screenBounds)-rect.size.height-viewRect.size.height;
-        _alertView.frame = viewRect;
+        self.alertView.frame = viewRect;
     }completion:^(BOOL finished) {
     }];
 }
@@ -480,7 +480,7 @@ CGRect getScreenBounds() {
  */
 - (void)keyBoardWillHide:(NSNotification *)note{
     [UIView animateWithDuration:[note.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue] animations:^{
-        _alertView.center = self.center;
+        self.alertView.center = self.center;
     }];
 }
 
